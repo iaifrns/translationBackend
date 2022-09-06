@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
+from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
 from .serializer import UserSerializer
 from .models import UserModel
 import jwt, datetime
 
-class Register(APIView):
+class Register(GenericAPIView):
+    serializer_class= UserSerializer
     def post(self, request):
         serializers = UserSerializer(data=request.data)
         serializers.is_valid(raise_exception=True)
@@ -15,7 +17,8 @@ class Register(APIView):
         return Response(serializers.data)
 
 
-class Login(APIView):
+class Login(GenericAPIView):
+    serializer_class= UserSerializer
     def post(self, request):
         email = request.data['email']
         password = request.data['password']
@@ -45,7 +48,8 @@ class Login(APIView):
 
         return response
 
-class getUser(APIView):
+class getUser(GenericAPIView):
+    serializer_class= UserSerializer
     def get(self, request):
         token = request.COOKIES.get('jwt')
 
