@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'user',
     'content',
     'subject',
+    'title',
+    'example',
+    'exercise',
+    'courses'
 ]
 
 MIDDLEWARE = [
