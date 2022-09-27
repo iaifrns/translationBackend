@@ -65,3 +65,15 @@ class getUser(GenericAPIView):
         serializer = UserSerializer(user)
 
         return Response(serializer.data)
+
+class getUsers(GenericAPIView):
+    serializer_class = UserSerializer
+    def get(self, request):
+        token= request.COOKIES.get('jwt')
+        if not token:
+            raise AuthenticationFailed("not auhtenticated")
+            
+        model = UserModel.objects.all()
+
+        serializer= UserSerializer(model, many = True)
+        return Response(serializer.data)
