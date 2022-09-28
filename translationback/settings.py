@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'exercise',
     'courses',
     'features',
-    'features_category'
+    'features_category',
+    'teachers'
 ]
 
 MIDDLEWARE = [
