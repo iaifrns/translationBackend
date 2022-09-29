@@ -49,7 +49,9 @@ INSTALLED_APPS = [
     'courses',
     'features',
     'features_category',
-    'teachers'
+    'teachers',
+    'exerciseLevel',
+    'excerciseComplited'
 ]
 
 MIDDLEWARE = [

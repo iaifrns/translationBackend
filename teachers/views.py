@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
-from .serializer import TeachersSerializer
+from .serializers import TeachersSerializer
 from .models import TeachersModel
 import jwt, datetime
 
