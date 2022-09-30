@@ -41,6 +41,7 @@ urlpatterns = [
     path('teachers/', include('teachers.urls')),
     path('execise/', include('exercise.urls')),
     path('execiseLevel/', include('exerciseLevel.urls')),
+    path('multipleChoise/', include('multipleChoise.urls')),
     path('execiseComplited/', include('excerciseComplited.urls')),
     path('features/', include('features.urls')),
     path('features_category/', include('features_category.urls')),

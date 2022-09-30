@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'features_category',
     'teachers',
     'exerciseLevel',
-    'excerciseComplited'
+    'excerciseComplited',
+    'multipleChoise'
 ]
 
 MIDDLEWARE = [
