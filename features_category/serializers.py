@@ -4,4 +4,4 @@ from .models import FcategoryModel
 class FcategorySerializer(serializers.ModelSerializer):
     class Meta:
         model= FcategoryModel
-        fields= ['id', 'name']
+        fields= ['id', 'name', 'subject_id']

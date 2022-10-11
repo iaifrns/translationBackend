@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from .serializers import contentSerializer
 from .models import contentModel
 from rest_framework.exceptions import AuthenticationFailed
+from django.utils.translation import gettext as _
 
 class AddContent(GenericAPIView):
     serializer_class= contentSerializer
@@ -50,3 +51,9 @@ class GetContent(GenericAPIView):
 
         return Response(serializer.data)
         
+class translate(GenericAPIView):
+    def get(self, request):
+        text = request.data['text']
+        return Response({
+            "translation": _(text)
+        })

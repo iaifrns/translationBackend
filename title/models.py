@@ -4,3 +4,4 @@ class TitleModel(models.Model):
     titleName= models.CharField(max_length=255)
     titleIcon= models.CharField(max_length=255)
     contentId= models.IntegerField()
+    titleNameFrench = models.CharField(max_length=255, default="Any")
